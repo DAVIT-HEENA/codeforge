@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to AOD AI</h1>
+        <button id="startBtn">Start AI Assistant</button>
+    </div>
+
+    <div class="glow-border"></div>
+
+    <script>
+        document.getElementById("startBtn").addEventListener("click", function() {
+            fetch("/run-script") // Calls the Python script
+                .then(response => response.text())
+                .then(data => console.log(data))
+                .catch(error => console.error("Error:", error));
+
+            // Activate the blue glow effect
+            document.querySelector(".glow-border").classList.add("active");
+        });
+    </script>
+</body>
+</html>
