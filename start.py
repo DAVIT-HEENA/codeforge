@@ -76,7 +76,7 @@ def takecommand():
 
 
 if __name__ == '__main__':
-    API_KEY = "AIzaSyCU4QeDWmnNyQAoNeGfLx7ihddRLH3zzb4"
+    API_KEY = "api key"
     genai.configure(api_key=API_KEY)
     model = genai.GenerativeModel("gemini-1.5-pro-latest")
     say("hello I am aod A.I ")
